@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+header {
+    background-color: #84E1BC;
+}
+h1{
+    font-size: 45px;
+    color: #623030;
+    font-family: "Montserrat Alternates", serif;
+}
+.texto h2{
+    font-size: 40px;
+}
+.texto p{
+    font-size: 20px;
+}

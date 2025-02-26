@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #84E1BC;
+}
+input {
+    border: 1px solid #9CA3AF;
+    height: 40px;
+    padding-left: 10px;
+    width: 100%;
+}
+.btn {
+    border: 1px solid #9CA3AF;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+.btn:hover {
+    border: 1px solid #d1d5db;
+}
+
+h2 {
+    font-size: 35px;
+    color: #623030;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+.container-box {
+    max-width: 350px;
+    width: 100%;
+    padding: 60px 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    height: 40px;
+}
