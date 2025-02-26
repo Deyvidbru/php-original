@@ -1,6 +1,6 @@
 <?php
 try {
-    $conexaoDefault = new PDO("pgsql:host=127.0.0.1;dbname=postgres", "postgres", "1910");
+    $conexaoDefault = new PDO("pgsql:host=127.0.0.1;dbname=postgres", "postgres", "pabd");
     $conexaoDefault->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $conexaoDefault->exec("CREATE DATABASE \"pomodoro\"");
@@ -12,7 +12,7 @@ try {
 }
 
 try {
-    $conexao = new PDO("pgsql:host=127.0.0.1;dbname=pomodoro", "postgres", "1910");
+    $conexao = new PDO("pgsql:host=127.0.0.1;dbname=pomodoro", "postgres", "pabd");
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $erro) {
     echo "Erro na conexão: " . $erro->getMessage();
@@ -34,7 +34,7 @@ $tabelas_sql = [
     )",
     "CREATE TABLE IF NOT EXISTS Tarefa (
         id SERIAL PRIMARY KEY,
-        descricao TEXT,
+        descricao VARCHAR(255),
         concluida BOOLEAN DEFAULT FALSE,
         id_usuario INT NOT NULL,
         FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE
