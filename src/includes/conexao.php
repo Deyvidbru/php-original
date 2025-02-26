@@ -3,7 +3,7 @@ try {
     $conexaoDefault = new PDO("pgsql:host=127.0.0.1;dbname=postgres", "postgres", "pabd");
     $conexaoDefault->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $conexaoDefault->exec("CREATE DATABASE \"pomodor\"");
+    $conexaoDefault->exec("CREATE DATABASE \"pomodoro\"");
 } catch (PDOException $erro) {
     if ($erro->getCode() != '42P04') {
         echo "Erro ao criar o banco de dados: " . $erro->getMessage();
