@@ -3,7 +3,7 @@ try {
     $conexaoDefault = new PDO("pgsql:host=127.0.0.1;dbname=postgres", "postgres", "pabd");
     $conexaoDefault->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $conexaoDefault->exec("CREATE DATABASE \"pomodoro\"");
+    $conexaoDefault->exec("CREATE DATABASE \"pomodor\"");
 } catch (PDOException $erro) {
     if ($erro->getCode() != '42P04') {
         echo "Erro ao criar o banco de dados: " . $erro->getMessage();
@@ -37,7 +37,7 @@ $tabelas_sql = [
         descricao VARCHAR(255),
         concluida BOOLEAN DEFAULT FALSE,
         id_usuario INT NOT NULL,
-        FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE
+        FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) 
     )",
     "CREATE TABLE IF NOT EXISTS Pomodoro (
         id SERIAL PRIMARY KEY,
@@ -46,7 +46,7 @@ $tabelas_sql = [
         duracao_pausalonga INT NOT NULL,
         ciclos INT NOT NULL,
         id_usuario INT NOT NULL,
-        FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE
+        FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) 
     )"
 ];
 
