@@ -116,10 +116,12 @@ try {
                             isRunning = false;
                             cicloCount++;
                             alert("Tempo esgotado! Ciclo " + cicloCount + " concluído.");
+
                             if (cicloCount < 4) {
                                 startBreakTimer();
                             } else {
-                                startBreakTimer(() => startLongBreakTimer());
+                                cicloCount = 0; 
+                                startLongBreakTimer();
                             }
                         } else {
                             minutes--;
@@ -132,6 +134,7 @@ try {
                 }, 1000);
             }
         }
+
 
         function startBreakTimer(callback = null) {
             if (!isRunning) {
