@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $confirmar_senha = $_POST['confirmar_senha'];
 
             if ($senha !== $confirmar_senha) {
-                echo "<script>alert('As senhas não coincidem!'); window.location.href='../../pages/users/cadastro.html';</script>";
+                echo "<script>alert('As senhas não coincidem!'); window.location.href='../../pages/users/cadastro.php';</script>";
                 exit();
             }
 

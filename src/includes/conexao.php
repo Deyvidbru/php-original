@@ -1,9 +1,9 @@
 <?php
 try {
-    $conexaoDefault = new PDO("pgsql:host=127.0.0.1;dbname=postgres", "postgres", "pabd");
+    $conexaoDefault = new PDO("pgsql:host=127.0.0.1;dbname=postgres", "postgres", "1910");
     $conexaoDefault->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $conexaoDefault->exec("CREATE DATABASE \"pomodoro\"");
+    $conexaoDefault->exec("CREATE DATABASE \"pomodoro-php\"");
 } catch (PDOException $erro) {
     if ($erro->getCode() != '42P04') {
         echo "Erro ao criar o banco de dados: " . $erro->getMessage();
@@ -12,7 +12,7 @@ try {
 }
 
 try {
-    $conexao = new PDO("pgsql:host=127.0.0.1;dbname=pomodoro", "postgres", "pabd");
+    $conexao = new PDO("pgsql:host=127.0.0.1;dbname=pomodoro-php", "postgres", "1910");
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $erro) {
     echo "Erro na conexão: " . $erro->getMessage();
